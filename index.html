@@ -4,17 +4,39 @@
         <style>
             body{background:url(bg.jpg);font-family: 'Lobster', cursive;color:white;}
             .logo{width:30%;margin-left:35%;}
-            .leftbox{padding:5px;width:20%;background:grey;}
-            .main{padding:5px;width:80%;background:green;}
+            .leftbox{padding:5px;width:20%;background:linear-gradient(180deg,#FE2D8A,rgba(0,0,0,0));}
+            .main{padding:5px;width:80%;}
             .container{display:flex;}
+            .tabs{border-radius:10px;background:linear-gradient(180deg,#F12B8C,rgba(213,40,124));width:90%;margin-left:5%;display:flex;}
+            .tab{padding:20px; cursor:pointer;border-right:2px solid white;}
+            .post-inner{margin-top:10px;border-radius:10px;width:70%;height:70%;color:grey;margin-left:15%;background:grey;}
+            .post-src{border-radius:10px;width:100%;}
         </style>
     </head>
     <body>
         <img class="logo" src="mlmemes.png">
         <div class="container">
             <div class="leftbox">Stories / Search</div>
-            <div class="main">Main</div>
+            <div class="main">
+                <div class="tabs">
+                    <div class="tab">Main</div>
+                </div>
+                <div class="post">
+                    <div class="post-inner">.</div>
+                </div>
+            </div>
         </div>
-        <script></script>
+        <script>
+            document.querySelector('.post-inner').innerHTML="<img class='post-src' src='meme1.jpg'>";
+            function resize(){
+                if(window.innerHeight > window.innerWidth){
+                    document.querySelector('.leftbox').style.display='none';
+                }else{
+                    document.querySelector('.leftbox').style.display='block';
+                }
+            }
+            resize()
+            window.addEventListener('resize',resize,10);
+        </script>
     </body>
 </html>
